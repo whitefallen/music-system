@@ -139,10 +139,10 @@
     <body>
         <header>
             <div class="container">
-                <a href="/" class="site-title">{{ .Site.Title }}</a>
+                <a href="{{ "" | relURL }}" class="site-title">{{ .Site.Title }}</a>
                 <nav>
                     {{ range .Site.Menus.main }}
-                    <a href="{{ .URL }}">{{ .Name }}</a>
+                    <a href="{{ .URL | relURL }}">{{ .Name }}</a>
                     {{ end }}
                 </nav>
             </div>
@@ -157,8 +157,5 @@
                 <p>{{ .Site.Title }} · {{ now.Year }}</p>
             </div>
         </footer>
-    </body>
-</html>
-        {{ partial "footer" . }}
     </body>
 </html>
