@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container" style="text-align: center; padding-top: 2rem;">
+    <h1>{{ .Title }}</h1>
+    {{ if .Description }}
+    <p style="max-width: 40rem; margin: 0 auto 3rem; color: #9ca3af; font-size: 1.25rem;">{{ .Description }}</p>
+    {{ end }}
+    
+    {{ if .Content }}
+    <div style="text-align: left; margin-bottom: 3rem;">
+        {{ .Content }}
+    </div>
+    {{ end }}
+    
+    {{ if .Site.Menus.main }}
+    <nav class="card-grid" style="text-align: left;">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="card">
+            <h2 class="card-title">{{ .Name }}</h2>
+            <p>Explore {{ .Name | lower }} →</p>
+        </a>
+        {{ end }}
+    </nav>
+    {{ end }}
+</div>
+{{ end }}

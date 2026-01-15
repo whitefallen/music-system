@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+html, body {
+    background-color: #121212;
+    color: #f3f4f6;
+}
+
+/* Typography improvements */
+.prose {
+    --tw-prose-body: #d1d5db;
+    --tw-prose-headings: #f3f4f6;
+    --tw-prose-links: #38bdf8;
+    --tw-prose-bold: #f3f4f6;
+    --tw-prose-counters: #9ca3af;
+    --tw-prose-bullets: #6b7280;
+    --tw-prose-hr: #374151;
+    --tw-prose-quotes: #d1d5db;
+    --tw-prose-quote-borders: #38bdf8;
+    --tw-prose-code: #f3f4f6;
+    --tw-prose-pre-code: #e5e7eb;
+    --tw-prose-pre-bg: #1f2937;
+}
+
+/* Wider container for documentation */
+.container {
+    max-width: 900px !important;
+}
+
+/* More breathing room for content */
+.prose p {
+    margin-bottom: 1.5em;
+    line-height: 1.8;
+}
+
+.prose li {
+    margin-bottom: 0.75em;
+    line-height: 1.7;
+}
+
+.prose h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #374151;
+}
+
+.prose h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Horizontal rules */
+.prose hr {
+    margin: 3rem 0;
+    border-color: #374151;
+}
+
+/* Blockquotes */
+.prose blockquote {
+    background-color: rgba(56, 189, 248, 0.05);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+}
+
+/* Lists */
+.prose ul, .prose ol {
+    padding-left: 1.5rem;
+}
+
+/* Tables */
+.prose table {
+    width: 100%;
+    margin: 2rem 0;
+}
+
+.prose th, .prose td {
+    padding: 1rem;
+    border: 1px solid #374151;
+}
+
+.prose th {
+    background-color: #1f2937;
+    font-weight: 600;
+}
+
+/* Links */
+.prose a {
+    color: #38bdf8;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.prose a:hover {
+    color: #7dd3fc;
+    text-decoration: underline;
+}
+
+/* Smooth transitions */
+article {
+    transition: all 0.2s ease;
+}

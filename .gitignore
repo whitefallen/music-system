@@ -1,0 +1,22 @@
+# Hugo output
+public/
+resources/_gen/
+
+# Hugo build lock
+.hugo_build.lock
+
+# Node modules (if using npm/tailwind)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Hugo cache
+/hugo_cache/

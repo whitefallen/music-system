@@ -1,0 +1,47 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Ritual Music Systems"
+theme = "hugo-noir"
+
+# Build settings
+enableRobotsTXT = true
+enableGitInfo = true
+
+[params]
+  name = "Ritual Music Systems"
+  description = "A formal, system-oriented approach to creating ritualistic, non-expressive, AI-mediated music"
+  profile_image = ""
+  # Social/contact (optional)
+  email = ""
+  github = ""
+  github_username = ""
+
+[menu]
+  [[menu.main]]
+    name = "Canon"
+    pageRef = "/canon"
+    weight = 10
+  [[menu.main]]
+    name = "Lab"
+    pageRef = "/lab"
+    weight = 20
+  [[menu.main]]
+    name = "Appendices"
+    pageRef = "/appendices"
+    weight = 30
+  [[menu.main]]
+    name = "Glossary"
+    pageRef = "/canon/glossary"
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    
+[taxonomies]
+  tag = "tags"
+  category = "categories"

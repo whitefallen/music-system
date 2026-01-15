@@ -1,0 +1,17 @@
+services:
+  hugo:
+    build: .
+    ports:
+      - "1313:1313"
+    volumes:
+      - .:/src
+    command: hugo server --bind 0.0.0.0 --buildDrafts --buildFuture --poll 700ms
+    
+  # One-time build for production
+  build:
+    build: .
+    volumes:
+      - .:/src
+    command: hugo --minify
+    profiles:
+      - build

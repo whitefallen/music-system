@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="container">
+    <article class="article-box">
+        <header class="article-header">
+            <h1>{{ .Title }}</h1>
+            {{ if .Description }}
+            <p>{{ .Description }}</p>
+            {{ end }}
+        </header>
+        
+        <div class="content">
+            {{ .Content }}
+        </div>
+        
+        {{ if .Parent }}
+        <div class="back-link">
+            <a href="{{ .Parent.RelPermalink }}">← Back to {{ .Parent.Title }}</a>
+        </div>
+        {{ end }}
+    </article>
+</div>
+{{ end }}
