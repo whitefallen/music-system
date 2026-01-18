@@ -11,6 +11,34 @@
     </div>
     {{ end }}
     
+    {{/* Featured Ritual Systems - shows all EPs with featured: true */}}
+    {{ $ritualSystems := .Site.GetPage "/lab/ritual-systems" }}
+    {{ $featured := slice }}
+    {{ range $ritualSystems.Sections }}
+        {{ if .Params.featured }}
+            {{ $featured = $featured | append . }}
+        {{ end }}
+    {{ end }}
+    
+    {{ if $featured }}
+    <div class="featured-eps" style="margin-bottom: 3rem; text-align: left;">
+        <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #6b7280; margin-bottom: 0.75rem;">Featured Ritual System{{ if gt (len $featured) 1 }}s{{ end }}</p>
+        <div class="card-list">
+        {{ range sort $featured ".Params.featured_order" "asc" }}
+            <a href="{{ .RelPermalink }}" class="card" style="display: block; background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(38, 38, 38, 0.5) 100%); border-color: #38bdf8;">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h2 class="card-title" style="font-size: 1.75rem; margin-bottom: 0.5rem;">{{ .Title }}</h2>
+                        <p style="color: #d1d5db; margin-bottom: 0;">{{ .Description }}</p>
+                    </div>
+                    <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; white-space: nowrap;">Explore EP →</span>
+                </div>
+            </a>
+        {{ end }}
+        </div>
+    </div>
+    {{ end }}
+    
     {{ if .Site.Menus.main }}
     <nav class="card-grid" style="text-align: left;">
         {{ range .Site.Menus.main }}
