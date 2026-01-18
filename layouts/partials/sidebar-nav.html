@@ -1,0 +1,50 @@
+{{/* Sidebar Navigation - Recursive Tree */}}
+
+{{ $currentPage := . }}
+
+{{ range site.Sections }}
+    {{ $isActive := or (eq $currentPage.RelPermalink .RelPermalink) ($currentPage.IsDescendant .) }}
+    <div class="sidebar-section">
+        <div class="sidebar-section-title">{{ .Title }}</div>
+        <ul class="nav-tree">
+            {{ template "nav-tree" (dict "section" . "currentPage" $currentPage "depth" 0) }}
+        </ul>
+    </div>
+{{ end }}
+
+{{ define "nav-tree" }}
+    {{ $section := .section }}
+    {{ $currentPage := .currentPage }}
+    {{ $depth := .depth }}
+    
+    {{/* Get pages and sections */}}
+    {{ $pages := $section.RegularPages }}
+    {{ $sections := $section.Sections }}
+    
+    {{/* Render child sections first */}}
+    {{ range $sections }}
+        {{ $hasChildren := or (gt (len .RegularPages) 0) (gt (len .Sections) 0) }}
+        {{ $isCurrentOrAncestor := or (eq $currentPage.RelPermalink .RelPermalink) ($currentPage.IsDescendant .) }}
+        
+        <li class="nav-parent{{ if $isCurrentOrAncestor }} expanded{{ end }}">
+            <a href="{{ .RelPermalink }}" class="nav-link{{ if eq $currentPage.RelPermalink .RelPermalink }} active{{ end }}">
+                {{ if $hasChildren }}<span class="nav-toggle">▸</span>{{ end }}
+                {{ .Title }}
+            </a>
+            {{ if $hasChildren }}
+                <ul class="nav-children">
+                    {{ template "nav-tree" (dict "section" . "currentPage" $currentPage "depth" (add $depth 1)) }}
+                </ul>
+            {{ end }}
+        </li>
+    {{ end }}
+    
+    {{/* Then render regular pages */}}
+    {{ range $pages }}
+        <li>
+            <a href="{{ .RelPermalink }}"{{ if eq $currentPage.RelPermalink .RelPermalink }} class="active"{{ end }}>
+                {{ .Title }}
+            </a>
+        </li>
+    {{ end }}
+{{ end }}
