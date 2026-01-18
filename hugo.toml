@@ -30,9 +30,13 @@ enableGitInfo = true
     pageRef = "/appendices"
     weight = 30
   [[menu.main]]
+    name = "Templates"
+    pageRef = "/templates"
+    weight = 40
+  [[menu.main]]
     name = "Glossary"
     pageRef = "/canon/glossary"
-    weight = 40
+    weight = 50
 
 [markup]
   [markup.goldmark]
