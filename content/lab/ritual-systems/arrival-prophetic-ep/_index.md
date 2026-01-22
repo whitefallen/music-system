@@ -12,6 +12,18 @@ A ritual music system centered on the grammar of arrival — divinity as inevita
 
 **[Arrival / Prophetic EP on Suno →](https://suno.com/playlist/INSERT_PLAYLIST_ID)**
 
+### Tracklist
+
+0. **Dark Symphonic Ritual (God Descent)** — Anchor piece
+1. **Arrival of the Good God**
+2. **Arrival of the Doombringer**
+3. **Arrival of the Void**
+4. **The Covenant of Unknowing**
+5. **The Rite of Remainder**
+6. **The Final Measure**
+7. **The Fire That Records**
+8. **The Silence After Prophecy**
+
 ---
 
 ## Documents
