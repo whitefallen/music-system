@@ -8,6 +8,16 @@ featured_order: 1
 
 A ritual music system centered on the grammar of arrival — divinity as inevitable presence, not summoned authority.
 
+## Listen
+
+The complete EP is available on Suno:
+
+**[Arrival / Prophetic EP →](https://suno.com/playlist/INSERT_PLAYLIST_ID)**
+
+*Note: Replace `INSERT_PLAYLIST_ID` with the actual Suno playlist ID.*
+
+---
+
 ## Documents
 
 - **[System Specification](system/)** — Core constraints and dimensional bindings
