@@ -10,11 +10,7 @@ A ritual music system centered on the grammar of arrival — divinity as inevita
 
 ## Listen
 
-The complete EP is available on Suno:
-
-**[Arrival / Prophetic EP →](https://suno.com/playlist/INSERT_PLAYLIST_ID)**
-
-*Note: Replace `INSERT_PLAYLIST_ID` with the actual Suno playlist ID.*
+**[Arrival / Prophetic EP on Suno →](https://suno.com/playlist/INSERT_PLAYLIST_ID)**
 
 ---
 
